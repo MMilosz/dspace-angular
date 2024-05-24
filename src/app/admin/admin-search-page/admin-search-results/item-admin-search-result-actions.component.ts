@@ -12,6 +12,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { Item } from '../../../core/shared/item.model';
 import { URLCombiner } from '../../../core/url-combiner/url-combiner';
 import {
+  ITEM_EDIT_CLONE_PATH,
   ITEM_EDIT_DELETE_PATH,
   ITEM_EDIT_MOVE_PATH,
   ITEM_EDIT_PRIVATE_PATH,
@@ -56,6 +57,9 @@ export class ItemAdminSearchResultActionsComponent {
     return new URLCombiner(this.getEditRoute(), ITEM_EDIT_MOVE_PATH).toString();
   }
 
+  getCloneRoute(): string {
+    return new URLCombiner(this.getEditRoute(), ITEM_EDIT_CLONE_PATH).toString();
+  }
   /**
    * Returns the path to the delete page of this item
    */
